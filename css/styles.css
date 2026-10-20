@@ -1,0 +1,80 @@
+@font-face{font-family:"Vampire Zone";src:local("Vampire Zone"),local("VampireZone"),url("../fonts/Vampire Zone.ttf"),url("../fonts/Vampire%20Zone.otf"),url("../fonts/VampireZone.ttf"),url("../fonts/VampireZone.otf"),url("../font/Vampire%20Zone.ttf"),url("../font/Vampire%20Zone.otf"),url("../font/VampireZone.ttf"),url("../font/VampireZone.otf");font-display:swap}
+:root{--noche:#1a0b2e;--ciruela:#3b1d5e;--calabaza:#ff8a1f;--luna:#fff3c4;--moco:#b7f171;--tinta:#f4e9ff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:17px/1.6 Nunito,sans-serif;color:var(--tinta);background:var(--noche)}
+@media (pointer:fine){body,a,button,select,input,textarea{cursor:none}}
+#bg{position:fixed;inset:0;z-index:-3;background:linear-gradient(#1a0b2eaa,#1a0b2ee6),url(../assets/castillo.png) center/cover}
+.fog{position:fixed;left:-50%;width:200%;height:40vh;bottom:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at center,#d9c2ff33,transparent 65%);animation:niebla 30s linear infinite}
+.f2{bottom:-8vh;opacity:.7;animation-duration:45s;animation-direction:reverse}
+@keyframes niebla{to{transform:translateX(25%)}}
+#bats span{position:fixed;top:var(--y);left:-60px;font-size:var(--s);z-index:-1;animation:vuelo var(--t) linear forwards;pointer-events:none}
+@keyframes vuelo{50%{transform:translateY(-40px) scaleX(.7)}to{left:110vw}}
+#cur{position:fixed;z-index:99;pointer-events:none;font-size:28px;transform:translate(-50%,-50%);display:none}
+@media (pointer:fine){#cur{display:block}}
+#snd{position:fixed;right:14px;top:14px;z-index:50;background:var(--ciruela);border:2px solid var(--calabaza);border-radius:50%;width:44px;height:44px;font-size:20px;color:#fff}
+h1,h2,.logo{font-family:"Vampire Zone",Creepster,cursive;font-weight:400;letter-spacing:.04em}
+.hero{position:relative;min-height:calc(100vh - 66px);display:grid;place-items:end start;overflow:hidden;border-bottom:4px solid var(--calabaza)}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1a0b2ef0 10%,transparent 70%)}
+.hero-txt{position:relative;z-index:2;padding:clamp(20px,6vw,70px);max-width:560px}
+h1{font-size:clamp(3.5rem,11vw,7rem);margin:0;line-height:1;color:var(--calabaza);text-shadow:0 0 25px #ff8a1f88,4px 4px 0 #000;animation:parpadeo 5s infinite}
+@keyframes parpadeo{0%,92%,96%,100%{opacity:1}94%{opacity:.35}98%{opacity:.6}}
+.btn{display:inline-block;background:var(--calabaza);color:#1a0b2e;font:700 1rem Nunito;border:0;border-radius:30px;padding:12px 26px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:rotate(-2deg) scale(1.05);box-shadow:0 0 22px var(--calabaza)}
+.caja{max-width:860px;margin:auto;padding:30px 16px}
+.panel,.post{position:relative;background:#2a1248dd url(../assets/encaje.png) center/cover;border:2px solid var(--ciruela);border-radius:18px;padding:22px;backdrop-filter:blur(4px)}
+.panel{background:#2a1248ee;border-color:var(--calabaza)}
+.panel h2{font-size:2.2rem;margin:0 0 10px;color:var(--luna)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{grid-column:1/-1}
+input,select,textarea{font:inherit;background:#140726;color:var(--tinta);border:2px solid var(--ciruela);border-radius:10px;padding:10px;width:100%}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--moco);outline-offset:2px}
+.sticker{position:absolute;width:110px;pointer-events:none}
+.s1{right:10px;top:-62px;animation:flota 4s ease-in-out infinite}
+@keyframes flota{50%{transform:translateY(-10px) rotate(4deg)}}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.tabs button{background:var(--ciruela);color:var(--tinta);border:2px solid transparent;border-radius:20px;padding:8px 16px;font:700 .95rem Nunito}
+.tabs .on{border-color:var(--calabaza);background:#5b2a8c}
+.aviso{font-size:.9rem;color:var(--moco)}
+.post{margin:18px 0;border-left:6px solid var(--calabaza)}
+.post[data-c=disfraces]{border-left-color:#c77dff}.post[data-c=historias]{border-left-color:var(--moco)}
+.post h3{font-family:Creepster;font-weight:400;font-size:1.7rem;margin:4px 0;color:var(--luna);letter-spacing:.03em}
+.meta{font-size:.85rem;opacity:.75}
+.post p{white-space:pre-wrap;margin:8px 0;max-width:70ch}
+.post img.foto{max-width:100%;max-height:340px;border-radius:12px;border:2px solid var(--ciruela)}
+.acc{display:flex;gap:14px;align-items:center;margin-top:10px}
+.acc button{background:none;border:0;color:var(--calabaza);font:700 1rem Nunito}
+.like.dado{filter:grayscale(1)}
+.like:active{animation:salto .3s}@keyframes salto{50%{transform:scale(1.5) rotate(15deg)}}
+.coms{margin-top:10px;border-top:1px dashed var(--ciruela);padding-top:8px}
+.com{font-size:.95rem;margin:6px 0}.com b{color:var(--moco)}
+.fcom{display:flex;gap:6px;margin-top:8px}.fcom input:first-child{max-width:130px}
+footer{position:relative;text-align:center;padding:40px 16px 20px;background:linear-gradient(transparent,#0d0318)}
+footer img:first-child{width:min(420px,80%);border-radius:18px}
+.s2{width:90px;right:6%;bottom:30px}
+@media(max-width:600px){form{grid-template-columns:1fr}.fcom{flex-wrap:wrap}.fcom input:first-child{max-width:none}.sticker{width:80px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+[hidden]{display:none!important}
+.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:20px;padding:8px 70px 8px 20px;background:#140726f2;border-bottom:3px solid var(--calabaza);backdrop-filter:blur(6px)}
+.logo{font-size:2rem;color:var(--calabaza);text-decoration:none;text-shadow:0 0 12px #ff8a1f88}
+.top nav{display:flex;gap:6px;flex-wrap:wrap}
+.top nav a{color:var(--tinta);text-decoration:none;font-weight:700;padding:8px 16px;border-radius:20px;border:2px solid transparent}
+.top nav a:hover{background:var(--ciruela)}.top nav a.on{border-color:var(--calabaza);background:#5b2a8c}
+.vista{display:none}.vista.activa{display:block;animation:entra .45s ease-out}
+@keyframes entra{from{opacity:0;transform:scale(.98)}}
+.vista>h2{font-size:2.6rem;margin:0 0 14px;color:var(--calabaza)}
+.puertas{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:1000px;margin:-50px auto 30px;padding:0 16px;position:relative;z-index:3}
+.puertas a{background:#2a1248f2;border:2px solid var(--ciruela);border-radius:18px;padding:18px;text-decoration:none;color:var(--tinta);transition:.2s}
+.puertas a:hover{border-color:var(--calabaza);transform:translateY(-6px)}
+.puertas b{display:block;font:1.8rem "Vampire Zone",Creepster;color:var(--luna)}
+.quiz{text-align:center}
+#t-bar-wrap{height:10px;background:#140726;border-radius:6px;overflow:hidden;margin:10px 0}
+#t-bar{height:100%;background:var(--calabaza);transition:width 1s linear}
+#t-q{font-size:1.4rem;margin:16px 0}
+#t-ops{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#t-ops button{background:var(--ciruela);color:var(--tinta);border:2px solid #5b2a8c;border-radius:14px;padding:14px;font:700 1rem Nunito}
+#t-ops button:hover:not(:disabled){border-color:var(--calabaza)}
+#t-ops .bien{background:#2e7d32;border-color:var(--moco)}#t-ops .mal{background:#a8201a;border-color:#ff6b6b}
+.gran{font:3.5rem "Vampire Zone",Creepster;color:var(--calabaza)}
+@media(max-width:700px){.top{flex-wrap:wrap;padding-right:64px}#t-ops{grid-template-columns:1fr}.logo{font-size:1.6rem}}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hellodemon! :3 · Foro de Halloween</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="bg"></div><div class="fog f1"></div><div class="fog f2"></div><div id="bats"></div>
+<div id="cur">🕷️</div>
+<button id="snd" title="Sonido">🔇</button>
+
+<header class="top">
+  <a class="logo" href="#inicio">hellodemon! :3</a>
+  <nav id="menu">
+    <a href="#inicio">🏚️ Inicio</a><a href="#foro">💬 Foro</a><a href="#publicar">🪄 Publicar</a><a href="#trivia">🎬 Trivia</a>
+  </nav>
+</header>
+
+<main>
+<section id="inicio" class="vista">
+  <div class="hero">
+    <img class="hero-img" src="assets/hero.png" alt="Chica disfrazada de gato sobre calabazas">
+    <div class="hero-txt">
+      <h1>hellodemon!</h1>
+      <p>El foro donde se comparten disfraces, decoración e historias que dan escalofríos.</p>
+      <a class="btn" href="#publicar">Publicar en hellodemon! :3</a>
+    </div>
+  </div>
+  <div class="puertas">
+    <a href="#foro"><b>🎭 Disfraces</b>Ideas para sorprender en la fiesta.</a>
+    <a href="#foro"><b>🕯️ Decoración</b>Convertí tu casa en una mansión embrujada.</a>
+    <a href="#trivia"><b>🎬 Trivia</b>¿Cuánto sabés de películas de Halloween?</a>
+  </div>
+</section>
+
+<section id="foro" class="vista caja">
+  <h2>El foro</h2>
+  <nav class="tabs" id="tabs">
+    <button data-c="todos" class="on">Todo</button>
+    <button data-c="disfraces">🎭 Disfraces</button>
+    <button data-c="decoracion">🕯️ Decoración</button>
+    <button data-c="historias">👻 Historias</button>
+  </nav>
+  <p id="modo" class="aviso"></p>
+  <div id="feed"></div>
+</section>
+
+<section id="publicar" class="vista caja">
+  <div class="panel">
+    <h2>Compartí tu idea</h2>
+    <form id="f-post">
+      <input name="author" placeholder="Tu apodo" maxlength="30" required>
+      <select name="category" required>
+        <option value="disfraces">🎭 Disfraces</option>
+        <option value="decoracion">🕯️ Decoración</option>
+        <option value="historias">👻 Historias y leyendas</option>
+      </select>
+      <input name="title" placeholder="Título" maxlength="80" required class="full">
+      <textarea name="body" placeholder="Contá tu idea, tu truco o tu historia…" maxlength="2000" required rows="6" class="full"></textarea>
+      <input name="image_url" type="url" placeholder="Enlace a una imagen (opcional)" class="full">
+      <button class="btn full">Publicar</button>
+    </form>
+    <img class="sticker s1" src="assets/gato-fantasma.png" alt="">
+  </div>
+</section>
+
+<section id="trivia" class="vista caja">
+  <div class="panel quiz">
+    <div id="t-ini">
+      <h2>Trivia de terror</h2>
+      <p>10 preguntas sobre películas de Halloween. Tenés 15 segundos por pregunta: cuanto más rápido respondas, más puntos.</p>
+      <p>🏆 Tu mejor puntaje: <b id="t-mejor">0</b></p>
+      <button class="btn" id="t-go">Empezar</button>
+    </div>
+    <div id="t-juego" hidden>
+      <div id="t-num"></div>
+      <div id="t-bar-wrap"><div id="t-bar"></div></div>
+      <div id="t-q"></div>
+      <div id="t-ops"></div>
+    </div>
+    <div id="t-fin" hidden>
+      <h2>¡Se acabó el tiempo!</h2>
+      <div class="gran" id="t-pts"></div>
+      <p id="t-msg"></p>
+      <button class="btn" id="t-otra">Jugar de nuevo</button>
+    </div>
+    <img class="sticker s1" src="assets/gato-zombi.png" alt="">
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/monstruos.png" alt="Dos monstruitos tomados de la mano">
+  <p>Hecho en el Laboratorio de Aplicaciones II · Escuela Técnica “Carmen Molina de Llano”</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/config.js"></script>
+<script src="js/foro.js"></script>
+<script src="js/trivia.js"></script>
+<script src="js/efectos.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>
